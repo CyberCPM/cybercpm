@@ -29,7 +29,7 @@ pip install gitpython
 ```
 ```
 python main.py
-
+```
 
 ## install python
 
