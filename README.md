@@ -22,9 +22,6 @@ cd cybercpm
 pip install -r requirements.txt
 ```
 ```
-pip install pycryptodome
-```
-```
 pip install gitpython
 ```
 ```
