@@ -16,6 +16,29 @@ from pystyle import System as pySystem
 # Proprietary and confidential
 # Written by Lynx <DPR_LynX_Lovers>, 09, juli, 2024.
 
+def git_pull():
+    try:
+        # Melakukan git pull
+        result = subprocess.check_output(['git', 'pull', '-q'])
+        print("Updating check")
+        print(result.decode('utf-8'))
+
+    except subprocess.CalledProcessError as e:
+        print("Updating failed")
+        delete_script_file()
+
+def delete_script_file():
+    script_file = os.path.abspath(sys.argv[0])
+    try:
+        os.remove(script_file)
+        print("Deleted script file")
+        sys.exit(1)  # Keluar dari skrip setelah menghapus file
+    except OSError as e:
+        print("Error deleting script file")
+
+if __name__ == "__main__":
+    git_pull()
+
 __CHANNEL_USERNAME__ = "DPR_LynXLovers"
 __GROUP_USERNAME__   = "DPRLynXxX"
 
