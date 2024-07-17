@@ -1,5 +1,4 @@
 import requests
-# import json
 from time import sleep
 
 # Copyright (C) Lynx <DPR_LynX_Lovers> - All Rights Reserved
@@ -23,14 +22,7 @@ class CyberCPM:
         if response_decoded.get("ok"):
             self.auth_token = response_decoded.get("auth")
         return response_decoded.get("error")
-    
-    def register(self, email, password) -> int:
-        payload = { "account_email": email, "account_password": password }
-        params = { "key": self.access_key }
-        response = requests.post(f"{BASE_URL}/account_register", params=params, data=payload)
-        response_decoded = response.json()
-        return response_decoded.get("error")
-    
+
     def delete(self):
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
@@ -90,13 +82,6 @@ class CyberCPM:
         response_decoded = response.json()
         return response_decoded.get("ok")
 
-    def set_player_plates(self) -> bool:
-        payload = { "account_auth": self.auth_token }
-        params = { "key": self.access_key }
-        response = requests.post(f"{BASE_URL}/set_plates", params=params, data=payload)
-        response_decoded = response.json()
-        return response_decoded.get("ok")
-    
     def get_player_car(self, car_id) -> any:
         payload = { "account_auth": self.auth_token, "car_id": car_id }
         params = { "key": self.access_key }
@@ -110,35 +95,14 @@ class CyberCPM:
         response = requests.post(f"{BASE_URL}/delete_friends", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok")
-    
-    def unlock_w16(self) -> bool:
+
+    def full_unlock(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
-        response = requests.post(f"{BASE_URL}/unlock_w16", params=params, data=payload)
-        response_decoded = response.json()
-        return response_decoded.get("ok")
-    
-    def unlock_horns(self) -> bool:
-        payload = { "account_auth": self.auth_token }
-        params = { "key": self.access_key }
-        response = requests.post(f"{BASE_URL}/unlock_horns", params=params, data=payload)
-        response_decoded = response.json()
-        return response_decoded.get("ok")
-    
-    def disable_engine_damage(self) -> bool:
-        payload = { "account_auth": self.auth_token }
-        params = { "key": self.access_key }
-        response = requests.post(f"{BASE_URL}/disable_damage", params=params, data=payload)
+        response = requests.post(f"{BASE_URL}/full_unlock", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok")
 
-    def unlimited_fuel(self) -> bool:
-        payload = { "account_auth": self.auth_token }
-        params = { "key": self.access_key }
-        response = requests.post(f"{BASE_URL}/unlimited_fuel", params=params, data=payload)
-        response_decoded = response.json()
-        return response_decoded.get("ok")
-    
     def set_player_wins(self, amount) -> bool:
         payload = {
             "account_auth": self.auth_token,
@@ -159,20 +123,6 @@ class CyberCPM:
         response_decoded = response.json()
         return response_decoded.get("ok")
 
-    def unlock_houses(self) -> bool:
-        payload = { "account_auth": self.auth_token }
-        params = { "key": self.access_key }
-        response = requests.post(f"{BASE_URL}/unlock_houses", params=params, data=payload)
-        response_decoded = response.json()
-        return response_decoded.get("ok")
-    
-    def unlock_smoke(self) -> bool:
-        payload = { "account_auth": self.auth_token }
-        params = { "key": self.access_key }
-        response = requests.post(f"{BASE_URL}/unlock_smoke", params=params, data=payload)
-        response_decoded = response.json()
-        return response_decoded.get("ok")
-    
     def unlock_paid_cars(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
@@ -191,6 +141,13 @@ class CyberCPM:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         response = requests.post(f"{BASE_URL}/unlock_all_cars_siren", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+
+    def tune_up(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{BASE_URL}/tune_up", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok")
     

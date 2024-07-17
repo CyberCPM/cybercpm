@@ -25,7 +25,14 @@ pip install -r requirements.txt
 pip install gitpython
 ```
 ```
+pip install colorama
+```
+```
+pip install progressbar2
+```
+```
 python main.py
+```
 ```
 
 ## install python
