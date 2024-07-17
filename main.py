@@ -359,7 +359,7 @@ if __name__ == "__main__":
                     print(f"{Fore.RED}  [X] GAGAL.")
                     print(f"{Fore.RED}  [!] Silakan coba lagi.")
                     sleep(2)
-            elif service == "09": #Menu inject siren all cars
+            elif service == "09": #Menu tunup all cars
                 text = "=" * 58
                 print(Colorate.Horizontal(Colors.yellow_to_green, (text)))
                 print("  [!] Inject TuneUP All Cars.")
