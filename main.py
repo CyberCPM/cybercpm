@@ -40,7 +40,7 @@ if __name__ == "__main__":
     git_pull()
 
 __CHANNEL_USERNAME__ = "DPR_LynXLovers"
-__GROUP_USERNAME__   = "DPRLynXxX"
+__GROUP_USERNAME__   = "DPR_LynX"
 
 # Inisialisasi colorama
 init(autoreset=True)
