@@ -7,10 +7,9 @@ from time import sleep
 # No stealing. No tracing. No funny business.
 # Engineered in the shadows by DPRLynX on June 16th, 2025
 
-BASE_URL: str = "https://cybercpm.store/api"
+BASE_URL: str = "https://admincpm.io/chanxreyno2/api"
 
-class CyberCPM:
-
+class Emritz:
     def __init__(self, access_key) -> None:
         self.auth_token = None
         self.access_key = access_key
